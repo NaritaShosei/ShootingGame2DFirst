@@ -22,11 +22,6 @@ public class LockOn : MonoBehaviour
         {
             _isComplete = false;
             _sr.enabled = true;
-            var enemy = GameObject.FindGameObjectsWithTag("Enemy");
-            foreach (GameObject obj in enemy)
-            {
-                _targetPosition.Add(obj);
-            }
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 _targetCount = (_targetCount + 1) % _targetPosition.Count;
@@ -42,8 +37,18 @@ public class LockOn : MonoBehaviour
                 }
                 transform.DOMove(_targetPosition[_targetCount].transform.position, 0.5f).OnComplete(() => _isComplete = true);
             }
+            Debug.Log("’·‚³" + _targetPosition.Count);
+            Debug.Log("‚¢‚Ü" + _targetCount);
         }
 
+    }
+    public void Add(GameObject enemy)
+    {
+        _targetPosition.Add(enemy);
+    }
+    public void Remove(GameObject enemy)
+    {
+        _targetPosition.Remove(enemy);
     }
 }
 
