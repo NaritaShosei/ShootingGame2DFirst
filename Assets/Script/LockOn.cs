@@ -9,6 +9,7 @@ public class LockOn : MonoBehaviour
     SpriteRenderer _sr;
     int _targetCount;
     bool _isComplete = true;
+    float _distance;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,10 @@ public class LockOn : MonoBehaviour
     {
         if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow)) && _isComplete)
         {
+            foreach (var targetPos in _targetPosition)
+            {
+                _distance = targetPos.transform.position.x - transform.position.x;
+            }
             _isComplete = false;
             _sr.enabled = true;
             if (Input.GetKeyDown(KeyCode.RightArrow))
