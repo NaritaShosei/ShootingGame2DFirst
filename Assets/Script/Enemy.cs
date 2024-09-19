@@ -18,14 +18,17 @@ public class Enemy : MonoBehaviour
     }
     private void OnBecameVisible()
     {
+        Debug.Log("Camera In");
         _lockOn.Add(gameObject);
     }
     private void OnBecameInvisible()
     {
+        Debug.Log("Camera Out");
         _lockOn.Remove(gameObject); 
     }
     private void OnDestroy()
     {
+        Debug.Log("Destroy");
         _lockOn.Remove(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision)
