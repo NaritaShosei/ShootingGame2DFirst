@@ -5,10 +5,12 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     LockOn _lockOn;
+    HealthSystem _healthSystem;
     // Start is called before the first frame update
     void Start()
     {
         _lockOn = FindObjectOfType<LockOn>();   
+        _healthSystem = GetComponent<HealthSystem>();
     }
 
     // Update is called once per frame
@@ -35,7 +37,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
         {
-            Destroy(gameObject);
+            _healthSystem.Life(-1);
         }
     }
 }
