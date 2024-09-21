@@ -19,7 +19,9 @@ public class Bullet : MonoBehaviour
         }
         else if (_lockOn.IsLockOn)
         {
-            _rb.velocity =(_lockOn.transform.position - transform.position).normalized * _moveSpeed;
+            Vector2 dir = (_lockOn.transform.position - transform.position).normalized;
+            _rb.velocity = dir * _moveSpeed;
+            transform.localRotation = Quaternion.LookRotation(Vector3.forward,dir);
         }
     }
 
@@ -27,5 +29,12 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+        }
     }
 }
