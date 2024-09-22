@@ -197,6 +197,19 @@ PolygonCollider2D:
       - {x: 0.085, y: -0.11}
       - {x: 0.195, y: -0.14999999}
   m_UseDelaunayMesh: 0
+--- !u!114 &31299436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31299429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9890c3842542be34699117d6df350bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxLife: 3
 --- !u!1 &151066218
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,6 +387,19 @@ PolygonCollider2D:
       - {x: 0.36499998, y: -0.24}
       - {x: 0.36499998, y: 0.13}
   m_UseDelaunayMesh: 0
+--- !u!114 &257080249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257080242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9890c3842542be34699117d6df350bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxLife: 3
 --- !u!1 &264335701 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1988959072326566, guid: 2ce1fb9d977e03b49a1ce0113faf945e, type: 3}
@@ -451,6 +477,19 @@ PolygonCollider2D:
       - {x: 0.36499998, y: -0.24}
       - {x: 0.36499998, y: 0.13}
   m_UseDelaunayMesh: 0
+--- !u!114 &264335708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264335701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9890c3842542be34699117d6df350bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxLife: 3
 --- !u!1001 &351622764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -517,6 +556,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1988959072326566, guid: 2ce1fb9d977e03b49a1ce0113faf945e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 594050856}
+    - targetCorrespondingSourceObject: {fileID: 1988959072326566, guid: 2ce1fb9d977e03b49a1ce0113faf945e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 594050859}
   m_SourcePrefab: {fileID: 100100000, guid: 2ce1fb9d977e03b49a1ce0113faf945e, type: 3}
 --- !u!1 &519420028
 GameObject:
@@ -722,6 +764,19 @@ PolygonCollider2D:
       - {x: 0.36499998, y: -0.24}
       - {x: 0.36499998, y: 0.13}
   m_UseDelaunayMesh: 0
+--- !u!114 &594050859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594050852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9890c3842542be34699117d6df350bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxLife: 3
 --- !u!1001 &778000405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -788,6 +843,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1988959072326566, guid: 2ce1fb9d977e03b49a1ce0113faf945e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 264335705}
+    - targetCorrespondingSourceObject: {fileID: 1988959072326566, guid: 2ce1fb9d977e03b49a1ce0113faf945e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 264335708}
   m_SourcePrefab: {fileID: 100100000, guid: 2ce1fb9d977e03b49a1ce0113faf945e, type: 3}
 --- !u!1001 &833559337
 PrefabInstance:
@@ -855,6 +913,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1512782934554904, guid: 401d8aca9e846254890399f66cd7de66, type: 3}
       insertIndex: -1
       addedObject: {fileID: 31299433}
+    - targetCorrespondingSourceObject: {fileID: 1512782934554904, guid: 401d8aca9e846254890399f66cd7de66, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 31299436}
   m_SourcePrefab: {fileID: 100100000, guid: 401d8aca9e846254890399f66cd7de66, type: 3}
 --- !u!1 &920883802
 GameObject:
@@ -867,6 +928,7 @@ GameObject:
   - component: {fileID: 920883803}
   - component: {fileID: 920883805}
   - component: {fileID: 920883804}
+  - component: {fileID: 920883806}
   m_Layer: 0
   m_Name: PlayerSpaceShip
   m_TagString: Untagged
@@ -935,6 +997,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &920883806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920883802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9890c3842542be34699117d6df350bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxLife: 3
 --- !u!1001 &948426815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1001,6 +1076,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1988959072326566, guid: 2ce1fb9d977e03b49a1ce0113faf945e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 257080246}
+    - targetCorrespondingSourceObject: {fileID: 1988959072326566, guid: 2ce1fb9d977e03b49a1ce0113faf945e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 257080249}
   m_SourcePrefab: {fileID: 100100000, guid: 2ce1fb9d977e03b49a1ce0113faf945e, type: 3}
 --- !u!1001 &1077820183
 PrefabInstance:
@@ -1068,6 +1146,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1512782934554904, guid: 401d8aca9e846254890399f66cd7de66, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1696632360}
+    - targetCorrespondingSourceObject: {fileID: 1512782934554904, guid: 401d8aca9e846254890399f66cd7de66, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1696632363}
   m_SourcePrefab: {fileID: 100100000, guid: 401d8aca9e846254890399f66cd7de66, type: 3}
 --- !u!1 &1622157032
 GameObject:
@@ -1247,6 +1328,19 @@ PolygonCollider2D:
       - {x: 0.085, y: -0.11}
       - {x: 0.195, y: -0.14999999}
   m_UseDelaunayMesh: 0
+--- !u!114 &1696632363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696632356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9890c3842542be34699117d6df350bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxLife: 3
 --- !u!1 &1864675178
 GameObject:
   m_ObjectHideFlags: 0
