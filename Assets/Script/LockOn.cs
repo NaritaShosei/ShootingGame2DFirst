@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System;
 
 public class LockOn : MonoBehaviour
 {
     public List<GameObject> _targetPosition = new List<GameObject>();
     SpriteRenderer _sr;
-    public int _targetCount;
+    [NonSerialized] public int _targetCount;
     bool _isComplete = true;
     float _distance;
     public bool IsLockOn;
@@ -63,6 +64,10 @@ public class LockOn : MonoBehaviour
     {
         _targetPosition.Remove(enemy);
         IsLockOn = false;
+        if (_sr.enabled)
+        {
+            _sr.enabled = false;
+        }
     }
     private void OnBecameInvisible()
     {
