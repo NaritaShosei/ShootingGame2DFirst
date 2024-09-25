@@ -25,6 +25,10 @@ public class PlayerManager : MonoBehaviour
         {
             Instantiate(_bullet, _muzzle[0].transform.position, _bullet.transform.localRotation);
         }
+        if (Input.GetButtonDown("Fire2"))
+        {
+            Instantiate(_missile, _muzzle[0].transform.position, _missile.transform.localRotation);
+        }
         _hMove = Input.GetAxisRaw("Horizontal");
         _vMove = Input.GetAxisRaw("Vertical");
         var vel = _rb.velocity;
