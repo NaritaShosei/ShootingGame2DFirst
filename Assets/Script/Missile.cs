@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class Missile : MonoBehaviour
 {
-    LockOn _target;
+    LockOn LockOn;
     Vector3 _velocity;
     Vector3 _position;
+    GameObject _target;
     float _timer;
     [SerializeField] float _period = 1;//’…’e‚Ü‚Å‚ÌŽžŠÔ
 
     // Start is called before the first frame update
     void Start()
     {
-        _target = FindObjectOfType<LockOn>();
+        LockOn = FindObjectOfType<LockOn>();
+        _target = LockOn._targetPosition[LockOn._targetCount];
     }
 
     // Update is called once per frame
@@ -28,7 +30,7 @@ public class Missile : MonoBehaviour
         }
         if (_timer > 0.5f)
         {
-            if (_target.IsLockOn)
+            if (LockOn.IsLockOn)
             {
                 var dir = _target.transform.position - _position;
                 transform.localRotation = Quaternion.LookRotation(transform.forward, dir);

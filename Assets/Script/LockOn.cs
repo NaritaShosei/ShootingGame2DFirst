@@ -10,6 +10,7 @@ public class LockOn : MonoBehaviour
     SpriteRenderer _sr;
     [NonSerialized] public int _targetCount;
     bool _isComplete = true;
+    bool _isLocked;
     float _distance;
     public bool IsLockOn;
     // Start is called before the first frame update
@@ -26,6 +27,7 @@ public class LockOn : MonoBehaviour
         {
             if (_targetPosition.Count != 0)
             {
+                _isLocked = false;
                 IsLockOn = true;
                 _isComplete = false;
                 _sr.enabled = true;
@@ -33,7 +35,7 @@ public class LockOn : MonoBehaviour
                 {
                     _targetCount = (_targetCount + 1) % _targetPosition.Count;
                     //transform.position = _targetPosition[_targetCount].transform.position;
-                    transform.DOMove(_targetPosition[_targetCount].transform.position, 0.5f).OnComplete(() => _isComplete = true);
+                    transform.DOMove(_targetPosition[_targetCount].transform.position, 0.5f).OnComplete(() => _isLocked = true);
                 }
                 else if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
@@ -42,7 +44,7 @@ public class LockOn : MonoBehaviour
                     {
                         _targetCount = _targetPosition.Count - 1;
                     }
-                    transform.DOMove(_targetPosition[_targetCount].transform.position, 0.5f).OnComplete(() => _isComplete = true);
+                    transform.DOMove(_targetPosition[_targetCount].transform.position, 0.5f).OnComplete(() => _isLocked = true);
                 }
                 Debug.Log("’·‚³" + _targetPosition.Count);
                 Debug.Log("‚¢‚Ü" + _targetCount);
@@ -54,7 +56,11 @@ public class LockOn : MonoBehaviour
             IsLockOn = false;
             _sr.enabled = false;
         }
-
+        else if (_isLocked)
+        {
+            _isComplete = true;
+            transform.position = _targetPosition[_targetCount].transform.position;
+        }
     }
     public void Add(GameObject enemy)
     {
