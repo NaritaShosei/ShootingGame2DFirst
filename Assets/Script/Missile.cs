@@ -15,20 +15,25 @@ public class Missile : MonoBehaviour
     void Start()
     {
         LockOn = FindObjectOfType<LockOn>();
-        _target = LockOn._targetPosition[LockOn._targetCount];
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        var vec = new Vector3(2 * Time.deltaTime, 1);
         _position = transform.position;
         _timer += Time.deltaTime;
-        if (_timer <= 0.5f)
+        if (_timer <= 1f)
         {
+            transform.position -= new Vector3(1, -(transform.position.x * transform.position.x) * Time.deltaTime, 0).normalized * Time.deltaTime * 2 + vec * Time.deltaTime;
 
-            transform.position += new Vector3(2, 0, 0) * Time.deltaTime;
+            if (LockOn.IsLockOn)
+            {
+                _target = LockOn._targetPosition[LockOn._targetCount];
+            }
         }
-        if (_timer > 0.5f)
+        if (_timer > 1f)
         {
             if (LockOn.IsLockOn)
             {
