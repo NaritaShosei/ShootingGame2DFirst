@@ -59,7 +59,10 @@ public class LockOn : MonoBehaviour
         else if (_isLocked)
         {
             _isComplete = true;
-            transform.position = _targetPosition[_targetCount].transform.position;
+            if (_targetPosition[_targetCount] != null)
+            {
+                transform.position = _targetPosition[_targetCount].transform.position;
+            }
         }
     }
     public void Add(GameObject enemy)

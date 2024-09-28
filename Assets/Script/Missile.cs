@@ -1,5 +1,7 @@
+
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class Missile : MonoBehaviour
@@ -10,38 +12,50 @@ public class Missile : MonoBehaviour
     GameObject _target;
     float _timer;
     [SerializeField] float _period = 1;//’…’e‚Ü‚Å‚ÌŽžŠÔ
+    bool _isLockOn;
+    Rigidbody2D _rb;
 
     // Start is called before the first frame update
     void Start()
     {
         LockOn = FindObjectOfType<LockOn>();
-
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        var vec = new Vector3(2 * Time.deltaTime, 1);
+        var vec = new Vector3(2, -1);
         _position = transform.position;
         _timer += Time.deltaTime;
         if (_timer <= 1f)
         {
-            transform.position -= new Vector3(1, -(transform.position.x * transform.position.x) * Time.deltaTime, 0).normalized * Time.deltaTime * 2 + vec * Time.deltaTime;
-
+            transform.position += vec * Time.deltaTime;
             if (LockOn.IsLockOn)
             {
                 _target = LockOn._targetPosition[LockOn._targetCount];
+                _isLockOn = true;
+            }
+            else
+            {
+                _isLockOn = false;
             }
         }
         if (_timer > 1f)
         {
-            if (LockOn.IsLockOn)
+            if (_isLockOn)
             {
-                var dir = _target.transform.position - _position;
-                transform.localRotation = Quaternion.LookRotation(transform.forward, dir);
                 var acceleration = Vector3.zero;
-                acceleration += (dir - _velocity * _period) * 2f / (_period * _period);
-
+                if (_target)
+                {
+                    var dir = _target.transform.position - _position;
+                    transform.localRotation = Quaternion.LookRotation(transform.forward, dir);
+                    acceleration += (dir - _velocity * _period) * 2f / (_period * _period);
+                }
+                else
+                {
+                    acceleration += (transform.forward) * 2f / (_period * _period);
+                }
                 _period -= Time.deltaTime;
                 if (_period < 0)
                 {
