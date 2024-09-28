@@ -73,6 +73,7 @@ public class LockOn : MonoBehaviour
     {
         _targetPosition.Remove(enemy);
         IsLockOn = false;
+        _isLocked = false;
         if (_sr.enabled)
         {
             _sr.enabled = false;
